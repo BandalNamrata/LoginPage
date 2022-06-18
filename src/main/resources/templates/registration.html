@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+<body>
+<br>
+				<h1>Registration</h1>
+
+				<form th:action="@{/createUser}" method="POST" th:object="${registration}">
+					<div class="form-group">
+						<label class="control-label" for="Name"> Name </label>
+						<input id="name" class="form-control" th:field="*{name}"
+							required autofocus="autofocus" />
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="userName"> User Name </label> <input
+							id="userName" class="form-control" th:field="*{userName}"
+							required autofocus="autofocus" />
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="language"> Language </label> <input
+							id="language" class="form-control" th:field="*{language}" required
+							autofocus="autofocus" />
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="mobileNumber"> Mobile Number </label> <input
+							id="mobileNumber" class="form-control"
+							th:field="*{mobileNumber}" required autofocus="autofocus" />
+					</div>
+
+					<div class="form-group">
+						<button type="submit" class="btn btn-success">Register</button>
+						<span>Already registered? <a href="/" th:href="@{/FindByUserName/{userName}}">Login
+								here</a></span>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
